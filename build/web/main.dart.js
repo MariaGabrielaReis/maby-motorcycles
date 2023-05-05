@@ -23,6 +23,8 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
   const scaffold = flutter_sdk.src__material__scaffold;
   const snack_bar = flutter_sdk.src__material__snack_bar;
   const text = flutter_sdk.src__widgets__text;
+  const navigator = flutter_sdk.src__widgets__navigator;
+  const page = flutter_sdk.src__material__page;
   const media_query = flutter_sdk.src__widgets__media_query;
   const app_bar = flutter_sdk.src__material__app_bar;
   const basic = flutter_sdk.src__widgets__basic;
@@ -42,6 +44,7 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
   var main = Object.create(dart.library);
   var web_plugin_registrant = Object.create(dart.library);
   var signin = Object.create(dart.library);
+  var confirmation = Object.create(dart.library);
   var button = Object.create(dart.library);
   var input = Object.create(dart.library);
   var validate_input = Object.create(dart.library);
@@ -62,9 +65,12 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
     GlobalKeyOfFormState: () => (T.GlobalKeyOfFormState = dart.constFn(framework.GlobalKey$(form.FormState)))(),
     StringTovoid: () => (T.StringTovoid = dart.constFn(dart.fnType(dart.void, [core.String])))(),
     JSArrayOfInput: () => (T.JSArrayOfInput = dart.constFn(_interceptors.JSArray$(input.Input)))(),
+    BuildContextToConfirmation: () => (T.BuildContextToConfirmation = dart.constFn(dart.fnType(confirmation.Confirmation, [framework.BuildContext])))(),
     BuildContextAndintToSizedBox: () => (T.BuildContextAndintToSizedBox = dart.constFn(dart.fnType(basic.SizedBox, [framework.BuildContext, core.int])))(),
     BuildContextAndintToInput: () => (T.BuildContextAndintToInput = dart.constFn(dart.fnType(input.Input, [framework.BuildContext, core.int])))(),
     JSArrayOfWidget: () => (T.JSArrayOfWidget = dart.constFn(_interceptors.JSArray$(framework.Widget)))(),
+    ScaffoldFeatureControllerOfSnackBar$SnackBarClosedReason: () => (T.ScaffoldFeatureControllerOfSnackBar$SnackBarClosedReason = dart.constFn(scaffold.ScaffoldFeatureController$(snack_bar.SnackBar, snack_bar.SnackBarClosedReason)))(),
+    VoidToScaffoldFeatureControllerOfSnackBar$SnackBarClosedReason: () => (T.VoidToScaffoldFeatureControllerOfSnackBar$SnackBarClosedReason = dart.constFn(dart.fnType(T.ScaffoldFeatureControllerOfSnackBar$SnackBarClosedReason(), [])))(),
     StringN: () => (T.StringN = dart.constFn(dart.nullable(core.String)))(),
     StringNTovoid: () => (T.StringNTovoid = dart.constFn(dart.fnType(dart.void, [T.StringN()])))(),
     StringNToStringN: () => (T.StringNToStringN = dart.constFn(dart.fnType(T.StringN(), [T.StringN()])))()
@@ -269,81 +275,102 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
         [Text_strutStyle]: null,
         [Text_style]: null,
         [Text_textSpan]: null,
-        [Text_data]: "Formulário de cadastro"
+        [Text_data]: "Dados enviados com sucesso!"
       });
     },
-    get C20() {
-      return C[20] = dart.const({
-        __proto__: ui.Color.prototype,
-        [Color_value]: 4292932337
+    get C16() {
+      return C[16] = dart.const({
+        __proto__: text.Text.prototype,
+        [Widget_key]: null,
+        [Text_selectionColor]: null,
+        [Text_textHeightBehavior]: null,
+        [Text_textWidthBasis]: null,
+        [Text_semanticsLabel]: null,
+        [Text_maxLines]: null,
+        [Text_textScaleFactor]: null,
+        [Text_overflow]: null,
+        [Text_softWrap]: null,
+        [Text_locale]: null,
+        [Text_textDirection]: null,
+        [Text_textAlign]: null,
+        [Text_strutStyle]: null,
+        [Text_style]: null,
+        [Text_textSpan]: null,
+        [Text_data]: "Formulário de cadastro"
       });
     },
     get C21() {
       return C[21] = dart.const({
         __proto__: ui.Color.prototype,
-        [Color_value]: 4289912795
+        [Color_value]: 4292932337
       });
     },
     get C22() {
       return C[22] = dart.const({
         __proto__: ui.Color.prototype,
-        [Color_value]: 4286630852
+        [Color_value]: 4289912795
       });
     },
     get C23() {
       return C[23] = dart.const({
         __proto__: ui.Color.prototype,
-        [Color_value]: 4283283116
+        [Color_value]: 4286630852
       });
     },
     get C24() {
       return C[24] = dart.const({
         __proto__: ui.Color.prototype,
-        [Color_value]: 4280723098
+        [Color_value]: 4283283116
       });
     },
     get C25() {
       return C[25] = dart.const({
         __proto__: ui.Color.prototype,
-        [Color_value]: 4278228616
+        [Color_value]: 4280723098
       });
     },
     get C26() {
       return C[26] = dart.const({
         __proto__: ui.Color.prototype,
-        [Color_value]: 4278225275
+        [Color_value]: 4278228616
       });
     },
     get C27() {
       return C[27] = dart.const({
         __proto__: ui.Color.prototype,
-        [Color_value]: 4278221163
+        [Color_value]: 4278225275
       });
     },
     get C28() {
       return C[28] = dart.const({
         __proto__: ui.Color.prototype,
-        [Color_value]: 4278217052
+        [Color_value]: 4278221163
       });
     },
     get C29() {
       return C[29] = dart.const({
         __proto__: ui.Color.prototype,
+        [Color_value]: 4278217052
+      });
+    },
+    get C30() {
+      return C[30] = dart.const({
+        __proto__: ui.Color.prototype,
         [Color_value]: 4278209856
       });
     },
+    get C20() {
+      return C[20] = dart.constMap(core.int, ui.Color, [50, C[21] || CT.C21, 100, C[22] || CT.C22, 200, C[23] || CT.C23, 300, C[24] || CT.C24, 400, C[25] || CT.C25, 500, C[26] || CT.C26, 600, C[27] || CT.C27, 700, C[28] || CT.C28, 800, C[29] || CT.C29, 900, C[30] || CT.C30]);
+    },
     get C19() {
-      return C[19] = dart.constMap(core.int, ui.Color, [50, C[20] || CT.C20, 100, C[21] || CT.C21, 200, C[22] || CT.C22, 300, C[23] || CT.C23, 400, C[24] || CT.C24, 500, C[25] || CT.C25, 600, C[26] || CT.C26, 700, C[27] || CT.C27, 800, C[28] || CT.C28, 900, C[29] || CT.C29]);
+      return C[19] = dart.const({
+        __proto__: colors.MaterialColor.prototype,
+        [Color_value]: 4278228616,
+        [ColorSwatch__swatch]: C[20] || CT.C20
+      });
     },
     get C18() {
       return C[18] = dart.const({
-        __proto__: colors.MaterialColor.prototype,
-        [Color_value]: 4278228616,
-        [ColorSwatch__swatch]: C[19] || CT.C19
-      });
-    },
-    get C17() {
-      return C[17] = dart.const({
         __proto__: text_style.TextStyle.prototype,
         [TextStyle_overflow]: null,
         [TextStyle_fontVariations]: null,
@@ -369,12 +396,12 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
         [TextStyle__fontFamilyFallback]: null,
         [TextStyle_fontFamily]: null,
         [TextStyle_backgroundColor]: null,
-        [TextStyle_color]: C[18] || CT.C18,
+        [TextStyle_color]: C[19] || CT.C19,
         [TextStyle_inherit]: true
       });
     },
-    get C16() {
-      return C[16] = dart.const({
+    get C17() {
+      return C[17] = dart.const({
         __proto__: text.Text.prototype,
         [Widget_key]: null,
         [Text_selectionColor]: null,
@@ -389,13 +416,13 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
         [Text_textDirection]: null,
         [Text_textAlign]: null,
         [Text_strutStyle]: null,
-        [Text_style]: C[17] || CT.C17,
+        [Text_style]: C[18] || CT.C18,
         [Text_textSpan]: null,
         [Text_data]: " Crie sua conta!"
       });
     },
-    get C30() {
-      return C[30] = dart.const({
+    get C31() {
+      return C[31] = dart.const({
         __proto__: basic.SizedBox.prototype,
         [Widget_key]: null,
         [SingleChildRenderObjectWidget_child]: null,
@@ -403,8 +430,8 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
         [SizedBox_width]: null
       });
     },
-    get C31() {
-      return C[31] = dart.const({
+    get C32() {
+      return C[32] = dart.const({
         __proto__: basic.SizedBox.prototype,
         [Widget_key]: null,
         [SingleChildRenderObjectWidget_child]: null,
@@ -414,74 +441,126 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
     },
     get C33() {
       return C[33] = dart.const({
+        __proto__: text.Text.prototype,
+        [Widget_key]: null,
+        [Text_selectionColor]: null,
+        [Text_textHeightBehavior]: null,
+        [Text_textWidthBasis]: null,
+        [Text_semanticsLabel]: null,
+        [Text_maxLines]: null,
+        [Text_textScaleFactor]: null,
+        [Text_overflow]: null,
+        [Text_softWrap]: null,
+        [Text_locale]: null,
+        [Text_textDirection]: null,
+        [Text_textAlign]: null,
+        [Text_strutStyle]: null,
+        [Text_style]: null,
+        [Text_textSpan]: null,
+        [Text_data]: "Bem vindo(a)!"
+      });
+    },
+    get C34() {
+      return C[34] = dart.const({
+        __proto__: basic.SizedBox.prototype,
+        [Widget_key]: null,
+        [SingleChildRenderObjectWidget_child]: null,
+        [SizedBox_height]: 32,
+        [SizedBox_width]: null
+      });
+    },
+    get C35() {
+      return C[35] = dart.const({
+        __proto__: text.Text.prototype,
+        [Widget_key]: null,
+        [Text_selectionColor]: null,
+        [Text_textHeightBehavior]: null,
+        [Text_textWidthBasis]: null,
+        [Text_semanticsLabel]: null,
+        [Text_maxLines]: null,
+        [Text_textScaleFactor]: null,
+        [Text_overflow]: null,
+        [Text_softWrap]: null,
+        [Text_locale]: null,
+        [Text_textDirection]: null,
+        [Text_textAlign]: null,
+        [Text_strutStyle]: null,
+        [Text_style]: null,
+        [Text_textSpan]: null,
+        [Text_data]: "Dados confirmados!"
+      });
+    },
+    get C37() {
+      return C[37] = dart.const({
         __proto__: button.ButtonTypes.prototype,
         [_Enum__name]: "filled",
         [_Enum_index]: 0
       });
     },
-    get C34() {
-      return C[34] = dart.const({
+    get C38() {
+      return C[38] = dart.const({
         __proto__: button.ButtonTypes.prototype,
         [_Enum__name]: "unfilled",
         [_Enum_index]: 1
       });
     },
-    get C32() {
-      return C[32] = dart.constList([C[33] || CT.C33, C[34] || CT.C34], button.ButtonTypes);
+    get C36() {
+      return C[36] = dart.constList([C[37] || CT.C37, C[38] || CT.C38], button.ButtonTypes);
     },
-    get C35() {
-      return C[35] = dart.const({
+    get C39() {
+      return C[39] = dart.const({
         __proto__: text_input.TextInputType.prototype,
         [TextInputType_decimal]: null,
         [TextInputType_signed]: null,
         [TextInputType_index]: 0
       });
     },
-    get C38() {
-      return C[38] = dart.const({
+    get C42() {
+      return C[42] = dart.const({
         __proto__: borders.BorderStyle.prototype,
         [_Enum__name]: "solid",
         [_Enum_index]: 1
       });
     },
-    get C37() {
-      return C[37] = dart.const({
+    get C41() {
+      return C[41] = dart.const({
         __proto__: borders.BorderSide.prototype,
         [BorderSide_strokeAlign]: -1,
-        [BorderSide_style]: C[38] || CT.C38,
+        [BorderSide_style]: C[42] || CT.C42,
         [BorderSide_width]: 1,
-        [BorderSide_color]: C[18] || CT.C18
+        [BorderSide_color]: C[19] || CT.C19
       });
     },
-    get C40() {
-      return C[40] = dart.const({
+    get C44() {
+      return C[44] = dart.const({
         __proto__: ui.Radius.prototype,
         [Radius_y]: 4,
         [Radius_x]: 4
       });
     },
-    get C39() {
-      return C[39] = dart.const({
+    get C43() {
+      return C[43] = dart.const({
         __proto__: border_radius.BorderRadius.prototype,
-        [BorderRadius_bottomRight]: C[40] || CT.C40,
-        [BorderRadius_bottomLeft]: C[40] || CT.C40,
-        [BorderRadius_topRight]: C[40] || CT.C40,
-        [BorderRadius_topLeft]: C[40] || CT.C40
+        [BorderRadius_bottomRight]: C[44] || CT.C44,
+        [BorderRadius_bottomLeft]: C[44] || CT.C44,
+        [BorderRadius_topRight]: C[44] || CT.C44,
+        [BorderRadius_topLeft]: C[44] || CT.C44
       });
     },
-    get C36() {
-      return C[36] = dart.const({
+    get C40() {
+      return C[40] = dart.const({
         __proto__: input_border.OutlineInputBorder.prototype,
-        [InputBorder_borderSide]: C[37] || CT.C37,
-        [OutlineInputBorder_borderRadius]: C[39] || CT.C39,
+        [InputBorder_borderSide]: C[41] || CT.C41,
+        [OutlineInputBorder_borderRadius]: C[43] || CT.C43,
         [OutlineInputBorder_gapPadding]: 4
       });
     }
   }, false);
-  var C = Array(41).fill(void 0);
+  var C = Array(45).fill(void 0);
   var I = [
     "file:///zapp/project/lib/main.dart",
     "package:flutter_app/screens/signin.dart",
+    "package:flutter_app/screens/confirmation.dart",
     "package:flutter_app/ui/button.dart",
     "package:flutter_app/ui/input.dart",
     "package:flutter_app/utils/validate_input.dart"
@@ -576,7 +655,6 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
   var IconData_fontFamily = dart.privateName(icon_data, "IconData.fontFamily");
   var IconData_codePoint = dart.privateName(icon_data, "IconData.codePoint");
   var Icon_icon = dart.privateName(icon, "Icon.icon");
-  var _sendForm = dart.privateName(signin, "_sendForm");
   var Text_selectionColor = dart.privateName(text, "Text.selectionColor");
   var Text_textHeightBehavior = dart.privateName(text, "Text.textHeightBehavior");
   var Text_textWidthBasis = dart.privateName(text, "Text.textWidthBasis");
@@ -592,6 +670,7 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
   var Text_style = dart.privateName(text, "Text.style");
   var Text_textSpan = dart.privateName(text, "Text.textSpan");
   var Text_data = dart.privateName(text, "Text.data");
+  var _sendForm = dart.privateName(signin, "_sendForm");
   var TextStyle_overflow = dart.privateName(text_style, "TextStyle.overflow");
   var TextStyle_fontVariations = dart.privateName(text_style, "TextStyle.fontVariations");
   var TextStyle_fontFeatures = dart.privateName(text_style, "TextStyle.fontFeatures");
@@ -627,12 +706,13 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
     [_sendForm]() {
       if (dart.nullCheck(this[_formKey].currentState).validate()) {
         dart.nullCheck(this[_formKey].currentState).save();
-        scaffold.ScaffoldMessenger.of(this.context).showSnackBar(new snack_bar.SnackBar.new({content: new text.Text.new("Dados enviados com sucesso!")}));
+        scaffold.ScaffoldMessenger.of(this.context).showSnackBar(new snack_bar.SnackBar.new({content: C[15] || CT.C15}));
+        navigator.Navigator.push(dart.dynamic, this.context, new page.MaterialPageRoute.new({builder: dart.fn(context => new confirmation.Confirmation.new({name: signin._SignInState.name_, email: signin._SignInState.email, address: signin._SignInState.address, number: signin._SignInState.number, complement: signin._SignInState.complement, uf: signin._SignInState.uf, cep: signin._SignInState.cep}), T.BuildContextToConfirmation())}));
       }
     }
     build(context) {
       let tenPercentOfScreen = media_query.MediaQuery.of(context).size.width / 100 * 10;
-      return new scaffold.Scaffold.new({appBar: new app_bar.AppBar.new({title: C[15] || CT.C15}), body: new basic.Padding.new({padding: new edge_insets.EdgeInsets.symmetric({vertical: tenPercentOfScreen / 2, horizontal: tenPercentOfScreen > 64 ? tenPercentOfScreen * 1.5 : tenPercentOfScreen}), child: new form.Form.new({key: this[_formKey], child: new basic.Column.new({mainAxisAlignment: flex.MainAxisAlignment.center, children: T.JSArrayOfWidget().of([C[16] || CT.C16, C[30] || CT.C30, new basic.SizedBox.new({height: media_query.MediaQuery.of(context).size.height / 2, child: new scroll_view.ListView.separated({shrinkWrap: true, itemCount: this.inputs[$length], separatorBuilder: dart.fn((context, index) => C[31] || CT.C31, T.BuildContextAndintToSizedBox()), itemBuilder: dart.fn((context, index) => this.inputs[$_get](index), T.BuildContextAndintToInput())})}), C[30] || CT.C30, new basic.Row.new({mainAxisAlignment: flex.MainAxisAlignment.spaceAround, children: T.JSArrayOfWidget().of([new button.Button.new({label: "Enviar", onPress: dart.fn(() => this[_sendForm](), T.VoidTovoid())}), new button.Button.new({label: "Cancelar", onPress: dart.fn(() => dart.nullCheck(this[_formKey].currentState).reset(), T.VoidTovoid()), type: button.ButtonTypes.unfilled})])})])})})})});
+      return new scaffold.Scaffold.new({appBar: new app_bar.AppBar.new({title: C[16] || CT.C16}), body: new basic.Padding.new({padding: new edge_insets.EdgeInsets.symmetric({vertical: tenPercentOfScreen / 2, horizontal: tenPercentOfScreen > 64 ? tenPercentOfScreen * 1.5 : tenPercentOfScreen}), child: new form.Form.new({key: this[_formKey], child: new basic.Column.new({mainAxisAlignment: flex.MainAxisAlignment.center, children: T.JSArrayOfWidget().of([C[17] || CT.C17, C[31] || CT.C31, new basic.SizedBox.new({height: media_query.MediaQuery.of(context).size.height / 2, child: new scroll_view.ListView.separated({shrinkWrap: true, itemCount: this.inputs[$length], separatorBuilder: dart.fn((context, index) => C[32] || CT.C32, T.BuildContextAndintToSizedBox()), itemBuilder: dart.fn((context, index) => this.inputs[$_get](index), T.BuildContextAndintToInput())})}), C[31] || CT.C31, new basic.Row.new({mainAxisAlignment: flex.MainAxisAlignment.spaceAround, children: T.JSArrayOfWidget().of([new button.Button.new({label: "Enviar", onPress: dart.fn(() => this[_sendForm](), T.VoidTovoid())}), new button.Button.new({label: "Cancelar", onPress: dart.fn(() => dart.nullCheck(this[_formKey].currentState).reset(), T.VoidTovoid()), type: button.ButtonTypes.unfilled})])})])})})})});
     }
     static ['_#new#tearOff']() {
       return new signin._SignInState.new();
@@ -705,6 +785,108 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
       return new validate_input.InputValidator.new();
     }
   }, false);
+  var name$ = dart.privateName(confirmation, "Confirmation.name");
+  var email$ = dart.privateName(confirmation, "Confirmation.email");
+  var address$ = dart.privateName(confirmation, "Confirmation.address");
+  var number$ = dart.privateName(confirmation, "Confirmation.number");
+  var complement$ = dart.privateName(confirmation, "Confirmation.complement");
+  var uf$ = dart.privateName(confirmation, "Confirmation.uf");
+  var cep$ = dart.privateName(confirmation, "Confirmation.cep");
+  confirmation.Confirmation = class Confirmation extends framework.StatelessWidget {
+    get name() {
+      return this[name$];
+    }
+    set name(value) {
+      super.name = value;
+    }
+    get email() {
+      return this[email$];
+    }
+    set email(value) {
+      super.email = value;
+    }
+    get address() {
+      return this[address$];
+    }
+    set address(value) {
+      super.address = value;
+    }
+    get number() {
+      return this[number$];
+    }
+    set number(value) {
+      super.number = value;
+    }
+    get complement() {
+      return this[complement$];
+    }
+    set complement(value) {
+      super.complement = value;
+    }
+    get uf() {
+      return this[uf$];
+    }
+    set uf(value) {
+      super.uf = value;
+    }
+    get cep() {
+      return this[cep$];
+    }
+    set cep(value) {
+      super.cep = value;
+    }
+    static ['_#new#tearOff'](opts) {
+      let key = opts && 'key' in opts ? opts.key : null;
+      let name = opts && 'name' in opts ? opts.name : null;
+      let email = opts && 'email' in opts ? opts.email : null;
+      let address = opts && 'address' in opts ? opts.address : null;
+      let number = opts && 'number' in opts ? opts.number : null;
+      let complement = opts && 'complement' in opts ? opts.complement : null;
+      let uf = opts && 'uf' in opts ? opts.uf : null;
+      let cep = opts && 'cep' in opts ? opts.cep : null;
+      return new confirmation.Confirmation.new({key: key, name: name, email: email, address: address, number: number, complement: complement, uf: uf, cep: cep});
+    }
+    build(context) {
+      let tenPercentOfScreen = media_query.MediaQuery.of(context).size.width / 100 * 10;
+      return new scaffold.Scaffold.new({appBar: new app_bar.AppBar.new({title: C[33] || CT.C33}), body: new basic.Padding.new({padding: new edge_insets.EdgeInsets.symmetric({vertical: tenPercentOfScreen / 2, horizontal: tenPercentOfScreen > 64 ? tenPercentOfScreen * 1.5 : tenPercentOfScreen}), child: new basic.Column.new({crossAxisAlignment: flex.CrossAxisAlignment.start, mainAxisAlignment: flex.MainAxisAlignment.center, children: T.JSArrayOfWidget().of([new basic.Center.new({child: new text.Text.new("Olá, " + this.name + "!", {style: new text_style.TextStyle.new({fontSize: 18, color: colors.Colors.teal})})}), C[34] || CT.C34, new text.Text.new("Confirme os dados abaixo:", {style: new text_style.TextStyle.new({fontSize: 14})}), C[31] || CT.C31, new text.Text.new("E-mail: " + this.email + " \nEndereço: " + this.address + " \nNúmero: " + this.number + " \nComplemento: " + this.complement + " \nUF: " + this.uf + " \nCEP: " + this.cep, {style: new text_style.TextStyle.new({fontSize: 14, color: colors.Colors.grey})}), C[34] || CT.C34, new basic.Center.new({child: new button.Button.new({label: "Confirmar", onPress: dart.fn(() => scaffold.ScaffoldMessenger.of(context).showSnackBar(new snack_bar.SnackBar.new({content: C[35] || CT.C35})), T.VoidToScaffoldFeatureControllerOfSnackBar$SnackBarClosedReason())})})])})})});
+    }
+  };
+  (confirmation.Confirmation.new = function(opts) {
+    let key = opts && 'key' in opts ? opts.key : null;
+    let name = opts && 'name' in opts ? opts.name : null;
+    let email = opts && 'email' in opts ? opts.email : null;
+    let address = opts && 'address' in opts ? opts.address : null;
+    let number = opts && 'number' in opts ? opts.number : null;
+    let complement = opts && 'complement' in opts ? opts.complement : null;
+    let uf = opts && 'uf' in opts ? opts.uf : null;
+    let cep = opts && 'cep' in opts ? opts.cep : null;
+    this[name$] = name;
+    this[email$] = email;
+    this[address$] = address;
+    this[number$] = number;
+    this[complement$] = complement;
+    this[uf$] = uf;
+    this[cep$] = cep;
+    confirmation.Confirmation.__proto__.new.call(this, {key: key});
+    ;
+  }).prototype = confirmation.Confirmation.prototype;
+  dart.addTypeTests(confirmation.Confirmation);
+  dart.addTypeCaches(confirmation.Confirmation);
+  dart.setMethodSignature(confirmation.Confirmation, () => ({
+    __proto__: dart.getMethods(confirmation.Confirmation.__proto__),
+    build: dart.fnType(framework.Widget, [framework.BuildContext])
+  }));
+  dart.setLibraryUri(confirmation.Confirmation, I[2]);
+  dart.setFieldSignature(confirmation.Confirmation, () => ({
+    __proto__: dart.getFields(confirmation.Confirmation.__proto__),
+    name: dart.finalFieldType(core.String),
+    email: dart.finalFieldType(core.String),
+    address: dart.finalFieldType(core.String),
+    number: dart.finalFieldType(core.String),
+    complement: dart.finalFieldType(core.String),
+    uf: dart.finalFieldType(core.String),
+    cep: dart.finalFieldType(core.String)
+  }));
   var _name = dart.privateName(core, "_name");
   var _enumToString = dart.privateName(core, "_enumToString");
   var _Enum__name = dart.privateName(core, "_Enum._name");
@@ -724,17 +906,17 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
     __proto__: dart.getMethods(button.ButtonTypes.__proto__),
     [_enumToString]: dart.fnType(core.String, [])
   }));
-  dart.setLibraryUri(button.ButtonTypes, I[2]);
+  dart.setLibraryUri(button.ButtonTypes, I[3]);
   dart.setStaticFieldSignature(button.ButtonTypes, () => ['values', 'filled', 'unfilled']);
   dart.defineLazy(button.ButtonTypes, {
     /*button.ButtonTypes.values*/get values() {
-      return C[32] || CT.C32;
+      return C[36] || CT.C36;
     },
     /*button.ButtonTypes.filled*/get filled() {
-      return C[33] || CT.C33;
+      return C[37] || CT.C37;
     },
     /*button.ButtonTypes.unfilled*/get unfilled() {
-      return C[34] || CT.C34;
+      return C[38] || CT.C38;
     }
   }, false);
   var label$ = dart.privateName(button, "Button.label");
@@ -763,7 +945,7 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
       let key = opts && 'key' in opts ? opts.key : null;
       let label = opts && 'label' in opts ? opts.label : null;
       let onPress = opts && 'onPress' in opts ? opts.onPress : null;
-      let type = opts && 'type' in opts ? opts.type : C[33] || CT.C33;
+      let type = opts && 'type' in opts ? opts.type : C[37] || CT.C37;
       return new button.Button.new({key: key, label: label, onPress: onPress, type: type});
     }
     createState() {
@@ -774,7 +956,7 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
     let key = opts && 'key' in opts ? opts.key : null;
     let label = opts && 'label' in opts ? opts.label : null;
     let onPress = opts && 'onPress' in opts ? opts.onPress : null;
-    let type = opts && 'type' in opts ? opts.type : C[33] || CT.C33;
+    let type = opts && 'type' in opts ? opts.type : C[37] || CT.C37;
     this[label$] = label;
     this[onPress$] = onPress;
     this[type$] = type;
@@ -787,7 +969,7 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
     __proto__: dart.getMethods(button.Button.__proto__),
     createState: dart.fnType(framework.State$(framework.StatefulWidget), [])
   }));
-  dart.setLibraryUri(button.Button, I[2]);
+  dart.setLibraryUri(button.Button, I[3]);
   dart.setFieldSignature(button.Button, () => ({
     __proto__: dart.getFields(button.Button.__proto__),
     label: dart.finalFieldType(core.String),
@@ -813,7 +995,7 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
     __proto__: dart.getMethods(button._ButtonState.__proto__),
     build: dart.fnType(framework.Widget, [framework.BuildContext])
   }));
-  dart.setLibraryUri(button._ButtonState, I[2]);
+  dart.setLibraryUri(button._ButtonState, I[3]);
   var label$0 = dart.privateName(input, "Input.label");
   var icon$ = dart.privateName(input, "Input.icon");
   var validator$ = dart.privateName(input, "Input.validator");
@@ -859,7 +1041,7 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
       let icon = opts && 'icon' in opts ? opts.icon : null;
       let validator = opts && 'validator' in opts ? opts.validator : null;
       let onSaved = opts && 'onSaved' in opts ? opts.onSaved : null;
-      let keyboardType = opts && 'keyboardType' in opts ? opts.keyboardType : C[35] || CT.C35;
+      let keyboardType = opts && 'keyboardType' in opts ? opts.keyboardType : C[39] || CT.C39;
       return new input.Input.new({key: key, label: label, icon: icon, validator: validator, onSaved: onSaved, keyboardType: keyboardType});
     }
     createState() {
@@ -872,7 +1054,7 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
     let icon = opts && 'icon' in opts ? opts.icon : null;
     let validator = opts && 'validator' in opts ? opts.validator : null;
     let onSaved = opts && 'onSaved' in opts ? opts.onSaved : null;
-    let keyboardType = opts && 'keyboardType' in opts ? opts.keyboardType : C[35] || CT.C35;
+    let keyboardType = opts && 'keyboardType' in opts ? opts.keyboardType : C[39] || CT.C39;
     this[label$0] = label;
     this[icon$] = icon;
     this[validator$] = validator;
@@ -887,7 +1069,7 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
     __proto__: dart.getMethods(input.Input.__proto__),
     createState: dart.fnType(framework.State$(framework.StatefulWidget), [])
   }));
-  dart.setLibraryUri(input.Input, I[3]);
+  dart.setLibraryUri(input.Input, I[4]);
   dart.setFieldSignature(input.Input, () => ({
     __proto__: dart.getFields(input.Input.__proto__),
     label: dart.finalFieldType(core.String),
@@ -922,7 +1104,7 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
           t3 = (t2 = value, t2 == null ? "" : t2);
           t4 = this.widget.label;
           return t2$.validator(t3, t4);
-        }, T.StringNToStringN()), decoration: new input_decorator.InputDecoration.new({hintText: "Digite o " + this.widget.label, border: new input_border.OutlineInputBorder.new(), label: new text.Text.new(this.widget.label), focusedBorder: C[36] || CT.C36, prefixIcon: this.widget.icon})});
+        }, T.StringNToStringN()), decoration: new input_decorator.InputDecoration.new({hintText: "Digite o " + this.widget.label, border: new input_border.OutlineInputBorder.new(), label: new text.Text.new(this.widget.label), focusedBorder: C[40] || CT.C40, prefixIcon: this.widget.icon})});
     }
     static ['_#new#tearOff']() {
       return new input._InputState.new();
@@ -938,7 +1120,7 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
     __proto__: dart.getMethods(input._InputState.__proto__),
     build: dart.fnType(framework.Widget, [framework.BuildContext])
   }));
-  dart.setLibraryUri(input._InputState, I[3]);
+  dart.setLibraryUri(input._InputState, I[4]);
   validate_input.InputValidator = class InputValidator extends core.Object {
     validateText(value, field) {
       if (field === "Complemento") return null;
@@ -971,23 +1153,25 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
     __proto__: dart.getMethods(validate_input.InputValidator.__proto__),
     validateText: dart.fnType(dart.nullable(core.String), [core.String, core.String])
   }));
-  dart.setLibraryUri(validate_input.InputValidator, I[4]);
+  dart.setLibraryUri(validate_input.InputValidator, I[5]);
   dart.trackLibraries("zapp_user_main", {
     "file:///zapp/project/.zapp_entry.dart": $46zapp_entry,
     "file:///zapp/project/lib/main.dart": main,
     "file:///zapp/project/.dart_tool/dartpad/web_plugin_registrant.dart": web_plugin_registrant,
     "package:flutter_app/screens/signin.dart": signin,
+    "package:flutter_app/screens/confirmation.dart": confirmation,
     "package:flutter_app/ui/button.dart": button,
     "package:flutter_app/ui/input.dart": input,
     "package:flutter_app/utils/validate_input.dart": validate_input
   }, {
-  }, '{"version":3,"sourceRoot":"","sources":["/zapp/project/.zapp_entry.dart","/zapp/project/lib/main.dart","/zapp/project/.dart_tool/dartpad/web_plugin_registrant.dart","/zapp/project/lib/screens/signin.dart","/zapp/project/lib/ui/button.dart","/zapp/project/lib/ui/input.dart","/zapp/project/lib/utils/validate_input.dart"],"names":[],"mappings":"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","file":"main.js"}');
+  }, '{"version":3,"sourceRoot":"","sources":["/zapp/project/.zapp_entry.dart","/zapp/project/lib/main.dart","/zapp/project/.dart_tool/dartpad/web_plugin_registrant.dart","/zapp/project/lib/screens/signin.dart","/zapp/project/lib/screens/confirmation.dart","/zapp/project/lib/ui/button.dart","/zapp/project/lib/ui/input.dart","/zapp/project/lib/utils/validate_input.dart"],"names":[],"mappings":"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","file":"main.js"}');
   // Exports:
   return {
     zapp__project__$46zapp_entry: $46zapp_entry,
     zapp__project__lib__main: main,
     zapp__project__$46dart_tool__dartpad__web_plugin_registrant: web_plugin_registrant,
     screens__signin: signin,
+    screens__confirmation: confirmation,
     ui__button: button,
     ui__input: input,
     utils__validate_input: validate_input

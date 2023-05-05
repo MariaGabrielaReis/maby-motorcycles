@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:flutter_app/screens/confirmation.dart';
 import 'package:flutter_app/ui/button.dart';
 import 'package:flutter_app/ui/input.dart';
 import 'package:flutter_app/utils/validate_input.dart';
@@ -80,7 +81,22 @@ class _SignInState extends State<SignIn> {
       _formKey.currentState!.save();
       ScaffoldMessenger
         .of(context)
-        .showSnackBar(SnackBar(content: Text('Dados enviados com sucesso!')));
+        .showSnackBar(SnackBar(content: const Text('Dados enviados com sucesso!')));
+
+      Navigator.push(
+        context, 
+        MaterialPageRoute(builder: (context) => 
+          Confirmation(
+            name: name, 
+            email: email, 
+            address: address, 
+            number: number, 
+            complement: complement, 
+            uf: uf, 
+            cep: cep
+          ),
+        ),
+      );
     } 
   }
 
