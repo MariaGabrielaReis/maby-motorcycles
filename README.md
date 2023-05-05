@@ -13,8 +13,11 @@ Tela de cadastro com validações básicas (com os campos: nome, email, endereç
   - Caso alguma entrada não for informada, é evidenciado os campos que precisam ser completados
   - Caso o email seja inválido, uma mensagem de erro é exibida
   - Caso todos os campos estejam preenchidos, uma mensagem de sucesso é exibida
+- [x] Navegação para uma página de confirmação com os dados enviados
 
 Para acessar o projeto, [clique aqui](https://z3hg06rr3hh0.zapp.page/#/)
+
+[demo.webm](https://user-images.githubusercontent.com/69374340/236489503-1795d53e-9185-4091-b289-017191552fc0.webm)
 
 ### Estrutura de pastas
 
