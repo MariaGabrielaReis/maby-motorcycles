@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app/screens/home.dart';
 import 'package:flutter_app/ui/button.dart';
 
 class Confirmation extends StatelessWidget {
@@ -17,6 +18,17 @@ class Confirmation extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final tenPercentOfScreen = (MediaQuery.of(context).size.width / 100) * 10;
+
+    void _confirm() {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: const Text('Dados confirmados!'))
+      );
+     
+      Navigator.push(
+        context, 
+        MaterialPageRoute(builder: (context) => Home()),
+      );
+    }
 
     return Scaffold(
       appBar: AppBar(title: const Text('Bem vindo(a)!')),
@@ -43,14 +55,7 @@ class Confirmation extends StatelessWidget {
               style: TextStyle(fontSize: 14.0, color: Colors.grey),
             ),
             const SizedBox(height: 32.0),
-            Center(
-              child: Button(
-                label: 'Confirmar', 
-                onPress: () => ScaffoldMessenger.of(context).showSnackBar(
-                  SnackBar(content: const Text('Dados confirmados!'))
-                ),
-              ),
-            ),
+            Center(child: Button(label: 'Confirmar', onPress: () => _confirm())),
           ],
         ),
       ),
