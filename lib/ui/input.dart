@@ -1,7 +1,13 @@
 import 'package:flutter/material.dart';
 
 class Input extends StatefulWidget {
-  const Input({ 
+  final String label;
+  final Icon icon;
+  final String? Function(String value, String field) validator;
+  final void Function(String value) onSaved; 
+  final TextInputType keyboardType;
+
+   const Input({ 
     Key? key, 
     required this.label,
     required this.icon,
@@ -9,12 +15,6 @@ class Input extends StatefulWidget {
     required this.onSaved,
     this.keyboardType = TextInputType.text,
   }) : super(key: key);
-
-  final String label;
-  final Icon icon;
-  final String? Function(String value, String field) validator;
-  final void Function(String value) onSaved; 
-  final TextInputType keyboardType;
 
   @override  
    State<StatefulWidget> createState() => _InputState();
