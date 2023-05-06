@@ -21,7 +21,7 @@ Para acessar o projeto, [clique aqui](https://z3hg06rr3hh0.zapp.page/#/)
 ### Estrutura de pastas
 
 ```bash
-📂 coins-master
+📂 signin-form
 |- 📁 lib
 |--- 📁 screens
 |--- 📁 ui
