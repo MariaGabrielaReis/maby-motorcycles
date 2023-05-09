@@ -3,10 +3,11 @@ import 'package:flutter_app/screens/home.dart';
 import 'package:flutter_app/ui/button.dart';
 
 class ConfirmedOrder extends StatelessWidget {
+  const ConfirmedOrder({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Bem vindo(a)!')),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
