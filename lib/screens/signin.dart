@@ -7,6 +7,8 @@ import 'package:flutter_app/ui/input.dart';
 import 'package:flutter_app/utils/validate_input.dart';
 
 class SignIn extends StatefulWidget {
+  const SignIn({super.key});
+
   @override  
   State<StatefulWidget> createState() => _SignInState();
 }
@@ -49,11 +51,13 @@ class _SignInState extends State<SignIn> {
               ),
               const Text(
                 'Entre ou crie sua conta!',
-                style: TextStyle(fontSize: 18.0),
+                style: const TextStyle(fontSize: 18.0),
               ),
               const SizedBox(height: 32.0),
               Input(
                 label: 'E-mail',
+                placeholder: 'Digite seu e-mail',
+                inputType: InputType.email,
                 icon: const Icon(Icons.email_outlined),
                 validator: validator.validateText,
                 onSaved: (String value) => email = value,
@@ -61,7 +65,9 @@ class _SignInState extends State<SignIn> {
               const SizedBox(height: 8.0),
               Input(
                 label: 'Senha',
-                icon: const Icon(Icons.password),
+                placeholder: 'Digite sua senha',
+                inputType: InputType.password,
+                icon: const Icon(Icons.lock_outline),
                 validator: validator.validateText,
                 onSaved: (String value) => password = value,
               ),
