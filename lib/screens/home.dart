@@ -1,19 +1,45 @@
 
 import 'package:flutter/material.dart';
+import 'package:flutter_app/ui/button.dart';
+import 'package:flutter_app/ui/filters_modal.dart';
 import 'package:flutter_app/ui/product_card.dart';
+import 'package:flutter_app/mocks/motorcycles.dart';
 
 class Home extends StatefulWidget {
+  const Home({super.key});
+
   @override  
   State<StatefulWidget> createState() => _HomeState();
 }
 
 class _HomeState extends State<Home> {
-  final products = [
-    'Haojue DK 200 \nR\$ 13.000', 
-    'Honda CG 150 \nR\$ 18.000',
-    'Honda CBX 250 \nR\$ 25.000',
-    'Suzuki Intruder 125 \nR\$ 11.000',
-  ];
+  final filters = ['Capacetes', 'Luvas', 'Motos', 'Macacão', 'Acessórios customizados'];
+  List<String> selectedFilters = [];
+  String filtersMessage = '';
+
+  void _addFilter(String filter) {
+    final filterIndex = selectedFilters.indexOf(filter);
+    filterIndex > -1
+      ? selectedFilters.remove(filter)
+      : selectedFilters.add(filter);
+  }
+
+  void _applyFilters() {
+    if(selectedFilters.length > 0) {
+      filtersMessage = selectedFilters.first;
+      selectedFilters.forEach((filter) => 
+       setState(() {
+        filtersMessage += filter != selectedFilters.first ? ' | $filter' : '';
+       })
+      );
+    } else {
+      setState(() {
+        filtersMessage = '';
+      });
+    }
+
+    Navigator.pop(context);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -22,9 +48,13 @@ class _HomeState extends State<Home> {
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false,
-        title: const Text('Maby Motorcyles'),
+        title: Image.asset(
+          'images/logo.png',
+          height: 36.0,
+          fit: BoxFit.fitHeight,
+        ),
       ),
-      body: Padding(
+      body: SingleChildScrollView(
         padding: EdgeInsets.symmetric(
           vertical: fivePercentOfScreen,
           horizontal: fivePercentOfScreen > 64 ? fivePercentOfScreen * 1.5 : fivePercentOfScreen,
@@ -34,17 +64,39 @@ class _HomeState extends State<Home> {
           children: [
             Text(
               'Bem vindo(a)!',
-              style: TextStyle(fontSize: 18.0, color: Colors.teal),
+              style: const TextStyle(fontSize: 18.0, color: Colors.teal),
             ),
+            const SizedBox(height: 16.0),
+            Button(
+              label: 'Filtros', 
+              type: ButtonTypes.withIcon,
+              onPress: () => showModalBottomSheet(
+                context: context,
+                isScrollControlled: true,
+                shape: const CircleBorder(),
+                builder: (_) => FiltersModal(
+                  filters: filters,
+                  selectedFilters: selectedFilters,
+                  onSelectFilter: _addFilter, 
+                  onFilter: _applyFilters,
+                ),
+              ),
+            ),
+            const SizedBox(height: 8.0),
+            filtersMessage != '' ? Text('Filtrando por: $filtersMessage', style: TextStyle(color: Colors.grey)) : SizedBox.shrink(),
             const SizedBox(height: 16.0),
             ListView.separated(
               shrinkWrap: true,
-              itemCount: products.length,
-              separatorBuilder: (BuildContext context, int index) => const SizedBox(height: 4.0),
-              itemBuilder: (BuildContext context, int index) {
-                return ProductCard(name: products[index]);
+              physics: ClampingScrollPhysics(), 
+              itemCount: motorcycles.length,
+              separatorBuilder: (_, int index) => Padding(
+                padding: const EdgeInsets.symmetric(vertical: 8.0),
+                child: const Divider(),
+              ),
+              itemBuilder: (_, int index) {
+                return ProductCard(motorcycle: motorcycles[index]);
               },
-            ),     
+            ),                 
           ],
         ),
       ),
