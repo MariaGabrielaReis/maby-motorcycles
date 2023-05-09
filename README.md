@@ -14,12 +14,14 @@ Aplicativo que permite gerenciar informações de um e-commerce (básico) de mot
     - Caso o email seja inválido, uma mensagem de erro é exibida
     - Caso todos os campos estejam preenchidos, uma mensagem de sucesso é exibida
 - [x] Tela de login
-- [x] Home com listagem das motos disponíveis para compra
+- [x] Home com listagem das motos disponíveis para compra (com imagens e dados de cada uma)
+- [x] Filtro de produtos por tipo na home (por enquanto apenas layout)
 - [x] Fluxo de confirmação de pedido (escolhendo uma moto e a quantidade)
+  - Possível selecionar os produtos que deseja receber comunicações sobre promoções
 
 Para acessar o projeto, [clique aqui](https://z3hg06rr3hh0.zapp.page/#/)
 
-[demo.webm](https://user-images.githubusercontent.com/69374340/236633231-991ab0c1-7156-44be-b1c1-6181527190da.webm)
+[demo.webm](https://github.com/MariaGabrielaReis/maby-motorcycles/assets/69374340/be80f201-b17e-456d-aebc-55d0b040cc44)
 
 ### Estrutura de pastas
 
@@ -27,6 +29,8 @@ Para acessar o projeto, [clique aqui](https://z3hg06rr3hh0.zapp.page/#/)
 📂 maby-motorcycles
 |- 📁 images
 |- 📁 lib
+|--- 📁 mocks
+|--- 📁 models
 |--- 📁 screens
 |--- 📁 ui
 |--- 📁 utils
