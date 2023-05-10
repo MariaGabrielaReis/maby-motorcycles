@@ -1,33 +1,12 @@
-<h1 align="center"> 📱 SignIn Form 📱 </h1>
+<h1 align="center"> 🏍️ Maby Motorcycles 🏍️ </h1>
 
-Tela de cadastro com validações básicas (com os campos: nome, email, endereço, número, complemento, UF e CEP)
+### Atividade 01: Widget para entrada de dados
+Com base no exemplo visto (material de apoio), modifique o exemplo dado para que o formulário contenha as seguintes informações: **Nome, Endereço, Número, Complemento, UF, CEP**.
 
-- **Atividade desenvolvida na disciplina de Programação para Dispositivos Móveis II na FATEC de São José dos Campos** 📚
-
-> 🛠️ Tecnologias e ferramentas: **Flutter / Dart (IDE online: Zapp)**
-
-### Funcionalidades
-
-- [x] Prrenchimento dos campos nome, email, endereço, número, complemento, UF e CEP
-- [x] Validações:
-  - Caso alguma entrada não for informada, é evidenciado os campos que precisam ser completados
-  - Caso o email seja inválido, uma mensagem de erro é exibida
-  - Caso todos os campos estejam preenchidos, uma mensagem de sucesso é exibida
+> OBS.: Todos devem ser campos abertos, posteriormente iremos substituir por widgets específicos de acordo com o tipo de entrada. Por enquanto não é necessário aplicar máscara. Analisar se todas a entrada solicitas foram informadas, neste caso enviar uma mensagem indicando o envio, do contrário, mostrar qual das informações não foram informadas (destacar a entrada em vermelho neste caso).
 
 Para acessar o projeto, [clique aqui](https://z3hg06rr3hh0.zapp.page/#/)
 
-[form_demo](https://user-images.githubusercontent.com/69374340/236355539-feb3d542-59d6-44f3-a192-4429c287682b.webm)
-
-### Estrutura de pastas
-
-```bash
-📂 signin-form
-|- 📁 lib
-|--- 📁 screens
-|--- 📁 ui
-|--- 📁 utils
-|--- 📄 main.dart
-|- 📄 pubspec.yaml
-```
+[demo](https://user-images.githubusercontent.com/69374340/236355539-feb3d542-59d6-44f3-a192-4429c287682b.webm)
 
 [![image](https://img.shields.io/badge/✨%20Maria%20Gabriela%20Reis,%202023-LinkedIn-009973?style=flat-square)](https://www.linkedin.com/in/mariagabrielareis/)
