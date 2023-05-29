@@ -48,6 +48,11 @@ class _ProductCardState extends State<ProductCard> {
                     Text('R\$ ${item.price} \nQuant. disponível: ${item.quantity}', style: TextStyle(fontSize: 12.0)),
                   ],
                 ),
+                 !widget.isCartProduct ? Button(
+                  type: ButtonTypes.favorite,
+                  label: '',
+                  onPress: () => {},
+                ) : SizedBox.shrink(),
               ],
             ),
             const SizedBox(height: 8.0),

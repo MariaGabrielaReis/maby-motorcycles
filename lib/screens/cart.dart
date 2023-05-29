@@ -1,8 +1,8 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_app/screens/confirmed_order.dart';
 import 'package:flutter_app/ui/button.dart';
 import 'package:flutter_app/ui/checkbox.dart' as Custom;
+import 'package:flutter_app/ui/radio_button.dart' as Custom;
 import 'package:flutter_app/ui/input.dart';
 import 'package:flutter_app/ui/product_card.dart';
 import 'package:flutter_app/utils/validate_input.dart';
@@ -23,6 +23,13 @@ class _CartState extends State<Cart> {
   static final validator = InputValidator();
   var quantity = 1;
   var total = 0.0;
+
+  String? deliveryType;
+   void _selectDeliveryType(String type) {
+    setState(() {
+      deliveryType = type;
+    });
+  }
 
   List<String> selectedFilters = [];
   void _addFilter(String filter) {
@@ -90,13 +97,23 @@ class _CartState extends State<Cart> {
                     validator: validator.validateText,
                     onSaved: (String value) => quantity = int.parse(value),
                   ),
-                  // const SizedBox(height: 16.0), 
-                  // const Divider(),
-                  // const SizedBox(height: 16.0),  
-                  // Text('Informações de entrega', style: TextStyle(fontSize: 16.0)),
-                  // const SizedBox(height: 8.0),
-                  // Custom.Checkbox(label: 'Retirar na loja', onPress: () => debugPrint('retirar')),
-                  // Custom.Checkbox(label: 'Receber no meu endereço', onPress: () => debugPrint('receber')),
+                  const SizedBox(height: 16.0), 
+                  const Divider(),
+                  const SizedBox(height: 16.0),  
+                  Text('Informações de entrega', style: TextStyle(fontSize: 16.0)),
+                  const SizedBox(height: 8.0),
+                  Custom.RadioButton(
+                    label: 'Retirar na loja', 
+                    isChecked: deliveryType == 'Retirar na loja',
+                    group: deliveryType ?? '', 
+                    onPress: () => _selectDeliveryType('Retirar na loja'),
+                  ),
+                  Custom.RadioButton(
+                    label: 'Receber no meu endereço',
+                    isChecked: deliveryType == 'Receber no meu endereço',
+                    group: deliveryType ?? '',
+                    onPress: () => _selectDeliveryType('Receber no meu endereço'),
+                  ),
                   const SizedBox(height: 16.0), 
                   const Divider(),
                   const SizedBox(height: 16.0),  
