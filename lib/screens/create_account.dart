@@ -1,6 +1,6 @@
 
 import 'package:flutter/material.dart';
-import 'package:flutter_app/screens/confirmation.dart';
+import 'package:flutter_app/screens/service_terms.dart';
 import 'package:flutter_app/ui/button.dart';
 import 'package:flutter_app/ui/input.dart';
 import 'package:flutter_app/utils/validate_input.dart';
@@ -86,23 +86,10 @@ class _CreateAccountState extends State<CreateAccount> {
   void _sendForm() {
     if (_formKey.currentState!.validate()) {
       _formKey.currentState!.save();
-      ScaffoldMessenger
-        .of(context)
-        .showSnackBar(SnackBar(content: const Text('Dados enviados com sucesso!')));
-
+    
       Navigator.push(
         context, 
-        MaterialPageRoute(builder: (context) => 
-          Confirmation(
-            name: name, 
-            email: email, 
-            address: address, 
-            number: number, 
-            complement: complement, 
-            uf: uf, 
-            cep: cep
-          ),
-        ),
+        MaterialPageRoute(builder: (context) => ServiceTerms()),
       );
     } 
   }
@@ -151,52 +138,6 @@ class _CreateAccountState extends State<CreateAccount> {
             ],
           ),
         ),
-      ),
-    );
-  }
-}
-
-
-class MyStatelessWidget extends StatelessWidget {
-  const MyStatelessWidget({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return DefaultTextStyle(
-      style: Theme.of(context).textTheme.bodyMedium!,
-      child: LayoutBuilder(
-        builder: (BuildContext context, BoxConstraints viewportConstraints) {
-          return SingleChildScrollView(
-            child: ConstrainedBox(
-              constraints: BoxConstraints(
-                minHeight: viewportConstraints.maxHeight,
-              ),
-              child: IntrinsicHeight(
-                child: Column(
-                  children: <Widget>[
-                    Container(
-                      // A fixed-height child.
-                      color: const Color(0xffeeee00), // Yellow
-                      height: 120.0,
-                      alignment: Alignment.center,
-                      child: const Text('Fixed Height Content'),
-                    ),
-                    Expanded(
-                      // A flexible child that will grow to fit the viewport but
-                      // still be at least as big as necessary to fit its contents.
-                      child: Container(
-                        color: const Color(0xffee0000), // Red
-                        height: 120.0,
-                        alignment: Alignment.center,
-                        child: const Text('Flexible Content'),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-          );
-        },
       ),
     );
   }

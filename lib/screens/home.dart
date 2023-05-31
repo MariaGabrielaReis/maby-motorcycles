@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:flutter_app/screens/profile.dart';
 import 'package:flutter_app/ui/button.dart';
 import 'package:flutter_app/ui/filters_modal.dart';
 import 'package:flutter_app/ui/product_card.dart';
@@ -62,11 +63,41 @@ class _HomeState extends State<Home> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(
-              'Bem vindo(a)!',
-              style: const TextStyle(fontSize: 18.0, color: Colors.teal),
-            ),
-            const SizedBox(height: 16.0),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  'Bem vindo(a)!',
+                  style: const TextStyle(fontSize: 18.0, color: Colors.teal),
+                ),
+                SizedBox(
+                  width: 36.0,
+                  height: 36.0,
+                  child: ElevatedButton(
+                    onPressed: () => Navigator.push(
+                      context, 
+                      MaterialPageRoute(
+                        builder: (context) => Profile(), 
+                        maintainState: false,
+                      ),
+                    ),
+                    style: OutlinedButton.styleFrom(
+                      shadowColor: Colors.transparent,
+                      backgroundColor: Colors.white,
+                      padding: const EdgeInsets.all(3.5),
+                      shape: CircleBorder(),
+                      side: const BorderSide(color: Colors.teal, width: 1.5),
+                    ),
+                    child: CircleAvatar(
+                          backgroundColor: Colors.teal.shade400,
+                          child: const Icon(Icons.person, color: Colors.white, size: 24.0),
+                        ),
+                      ),
+              
+                ),
+              ],
+            ),           
+            const SizedBox(height: 8.0),
             Button(
               label: 'Filtros', 
               type: ButtonTypes.withIcon,
