@@ -33,7 +33,7 @@ Aplicativo que permite gerenciar informações de um e-commerce (básico) de mot
 
 Para acessar o projeto, [clique aqui](https://z3hg06rr3hh0.zapp.page/#/)
 
-[demo.webm](https://github.com/MariaGabrielaReis/maby-motorcycles/assets/69374340/be80f201-b17e-456d-aebc-55d0b040cc44)
+https://github.com/MariaGabrielaReis/maby-motorcycles/assets/69374340/f00c36f3-1439-480c-8e6d-5457a54f51fc
 
 ### Estrutura de pastas
 
