@@ -8,16 +8,28 @@ Aplicativo que permite gerenciar informações de um e-commerce (básico) de mot
 
 ### Funcionalidades
 
+- [x] Tela de login
 - [x] Criação de conta com os campos nome, email, senha, endereço, número, complemento, UF e CEP
   - Validações:
     - Caso alguma entrada não for informada, é evidenciado os campos que precisam ser completados
     - Caso o email seja inválido, uma mensagem de erro é exibida
-    - Caso todos os campos estejam preenchidos, uma mensagem de sucesso é exibida
-- [x] Tela de login
-- [x] Home com listagem das motos disponíveis para compra (com imagens e dados de cada uma)
-- [x] Filtro de produtos por tipo na home (por enquanto apenas layout)
+- [x] Termos de uso
+  - Apresentação dos termos de uso (exemplo fictício) informando os dados e motivo de serem coletados e utilizados
+    - **Opção de "Transparência" na atividade de Segurança no Desenvolvimento de Aplicações**
+  - Seleção de como os dados coletados podem ser usados (aceite ou recusa, gerando histórico)
+    - **Parte 1 da opção de "OPT IN/OUT" na atividade de Segurança no Desenvolvimento de Aplicações**
+- [x] Tela de perfil
+  - Com a possibilidade de editar as preferências em relações aos dados utilizados pelo app
+    - **Parte 2 da opção de "OPT IN/OUT" na atividade de Segurança no Desenvolvimento de Aplicações**
+  - Edição de dados (em breve)
+  - Lista de desejos (em breve)
+  - Exclusão de conta (em breve)
+- [x] Home com listagem das motos disponíveis para compra 
+   - Cada moto tem sua imagem e dados como nome, quantidade disponível e preço
+   - É possível ativar filtros através de um modal (por enquanto não há filtragem dos produtos)
 - [x] Fluxo de confirmação de pedido (escolhendo uma moto e a quantidade)
-  - Possível selecionar os produtos que deseja receber comunicações sobre promoções
+  - É possível selecionar os produtos que deseja receber comunicações sobre promoções
+  - Opção de escolha entre receber o produto no endereço informado ou retirar na loja
 
 Para acessar o projeto, [clique aqui](https://z3hg06rr3hh0.zapp.page/#/)
 
@@ -29,9 +41,11 @@ Para acessar o projeto, [clique aqui](https://z3hg06rr3hh0.zapp.page/#/)
 📂 maby-motorcycles
 |- 📁 images
 |- 📁 lib
+|--- 📁 configs
 |--- 📁 mocks
 |--- 📁 models
 |--- 📁 screens
+|--- 📁 services
 |--- 📁 ui
 |--- 📁 utils
 |--- 📄 main.dart
